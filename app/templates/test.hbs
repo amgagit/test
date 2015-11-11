@@ -1,0 +1,65 @@
+<h3>Test 1</h3>
+
+Hello <strong>{{firstName}} {{lastName}}</strong>! <br/>
+my fullname {{fullName}}<br/>
+How you doing {{if man (if soldier 'sir' 'Mr') 'Mrs'}}.{{lastName}}
+
+{{#if person}}
+  Welcome back, <b>{{person.firstName}} my friend</b>!
+{{else}}
+  <p>There is no Person object</p>
+{{/if}}
+
+{{#unless armyCompleted}}
+Keep practising, Private {{lastName}}!
+{{/unless}}
+
+<ul>Each private provided:
+  {{#each utils as |eq index|}}
+    <li>{{index}}. {{eq}}</li> 
+  {{else}}
+    <li>Resting private</li>
+  {{/each}}
+</ul>
+
+<div id="logo">
+  <img src={{logoUrl}} alt="Logo">
+</div>
+
+<input type="checkbox" checked={{isSelected}}>
+
+<h3 {{action "toggleBody" allowedKeys="H" on="mouseDown"}}>{{title}}</h3>
+{{#if isShowingBody}}
+<p>{{{body}}}</p>
+  {{/if}}
+
+  <p><button {{action "select" beverages}}>#</button> {{beverages.tea}}</p>
+
+  <a href="newPage.html" {{action "logClick" preventDefault=false}}>Go</a>
+
+<label>What's your favorite band?</label>
+<input type="text" value={{favoriteBand}} onblur={{action "bandDidChange"
+value="target.value"}} />
+
+<p>{{input value="http://www.facebook.com"}}</p>
+  
+{{input type="text" value=firstName size="50"}}
+<br/>
+<input type="text" value={{firstName}} />
+<br />
+
+{{input value=firstName key-press="updateFirstName"}}
+
+{{input type="checkbox" name="amdin" checked=true}}
+
+{{textarea value=lastName cols="80" rows="6"}}
+
+{{log lastName}}
+
+{{#each utils as |util|}}
+
+{{/each}}
+
+<p>250 cents is formatted to: {{format-currency 250}}</p>
+
+<p>you typed: {{my-helper "hello" "temp" " gsdgs"}}</p>
