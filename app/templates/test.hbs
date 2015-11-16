@@ -13,7 +13,7 @@ How you doing {{if man (if soldier 'sir' 'Mr') 'Mrs'}}.{{lastName}}
 {{#unless armyCompleted}}
 Keep practising, Private {{lastName}}!
 {{/unless}}
-
+<nav>
 <ul>Each private provided:
   {{#each utils as |eq index|}}
     <li>{{index}}. {{eq}}</li> 
@@ -21,7 +21,7 @@ Keep practising, Private {{lastName}}!
     <li>Resting private</li>
   {{/each}}
 </ul>
-
+</nav>
 <div id="logo">
   <img src={{logoUrl}} alt="Logo">
 </div>
@@ -50,7 +50,7 @@ value="target.value"}} />
 
 {{input value=firstName key-press="updateFirstName"}}
 
-{{input type="checkbox" name="amdin" checked=true}}
+{{input type="checkbox" name="amdin" class="checkbox" checked=true}}
 
 {{textarea value=lastName cols="80" rows="6"}}
 
@@ -60,6 +60,30 @@ value="target.value"}} />
 
 {{/each}}
 
-<p>250 cents is formatted to: {{format-currency 250}}</p>
+<p>250 cents is formatted to: {{format-currency 250 sign="@"}}</p>
 
-<p>you typed: {{my-helper "hello" "temp" " gsdgs"}}</p>
+<p>you typed: {{my-helper "hello" "temp" " third argument"}}</p>
+<br />
+
+{{input type="text" value=postTitle}}
+{{input type="text" value=postAuthor}}
+
+<ul class="parent">
+  <li class="step-child">step-child</li>
+  <li class="child">child2</li>
+  <li class="step-child">step-child2</li>
+</ul>
+
+<li>testing just li tag</li>
+<ul class="for"> 
+  <li class="item-1">first</li>
+  <li class="item-2">second</li>
+  <li class="item-3">third</li>
+  <li class="item-4">forth</li>
+  <li class="item-5">fifth</li>
+</ul>
+
+<div class="egret-icon">first</div>
+<div class="puma-icon">second</div>
+<div class="sea-slug-icon">third</div>
+<div class="salamander-icon">forth</div>

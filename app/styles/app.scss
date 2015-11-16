@@ -1,0 +1,113 @@
+
+
+$font-stack: Helvetica, sans-serif;
+$primary-color: #555;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    display: inline-block; 
+  }
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}
+
+@import 'h3';
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+  border: 1px solid;
+}
+
+input {
+  @include border-radius(10px);
+  width: 30px / 100px * 100%;
+}
+
+fifth
+a {
+  @extend body;
+  background-color: #0FF;
+  padding: 0px 10px;
+  &:hover {
+    text-decoration:none;
+    font-weight: bold;
+  }
+}
+// this is line comment
+// goes on
+
+/* 
+ * this is a block comment
+ */
+
+.checkbox {
+  margin: 10px 10px;
+  padding: 10px 10px;
+}
+
+.parent {
+  @at_root {
+    .child {
+      color: #FF0;
+      font-size: 15px;
+    }
+  }
+  .step-child {
+    font-size: 12px;
+  }
+}
+
+@debug 3px  + 6px;
+
+ul.parent {
+  @if 1 + 1 == 2 {
+    background-color: #f0f;
+  }
+  li {
+    @if null {
+      color: #000;
+    }
+  }
+}
+
+ul.for {
+  @for $i from 1 through 5 {
+    li.item-#{$i} {
+      width: 120px / $i;
+      background-color: #222 * $i;
+      color: #aaa / $i;
+    }
+  }
+}
+
+@each $animal, $color, $cursor in (puma, black, default),
+                                (sea-slug, blue, pointer),
+                                (egret, cyan, crosshair),
+                                (salamander, white, move) {
+  .#{$animal}-icon {
+    background-image: url('/assets/images/#{$animal}.jpg');
+    width: 100px;
+    margin: 10px;
+    color: #ccc;
+    border: 2px solid $color;
+    cursor: $cursor;
+  }
+}

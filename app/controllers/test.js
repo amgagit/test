@@ -19,6 +19,9 @@ export default Ember.Controller.extend({
   body: "receiving actions and toggling",
   favoriteBand : 'red hot chilli peppers',
 
+  postTitle: 'post title',
+  postAuthor: Ember.computed.oneWay('postTitle'),
+
   actions:{
     toggleBody() {
       this.toggleProperty('isShowingBody');
